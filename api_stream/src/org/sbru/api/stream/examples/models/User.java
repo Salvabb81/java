@@ -4,11 +4,14 @@ public class User {
 
 	private String firstName;
 	private String lastName;
+	private Integer id;
+	private static int ultimoId;
 
 	public User(String firstName, String lastName) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
+		this.id =  ++ultimoId;
 	}
 
 	public String getFirstName() {
@@ -30,6 +33,14 @@ public class User {
 	@Override
 	public String toString() {
 		return firstName + " " + lastName;
+	}
+	
+	public Integer getId() {
+		return id;
+	}
+	
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 }
