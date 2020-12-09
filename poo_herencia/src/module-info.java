@@ -1,0 +1,2 @@
+module poo_herencia {
+}
