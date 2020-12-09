@@ -4,18 +4,17 @@ import java.util.stream.Stream;
 
 import org.sbru.api.stream.examples.models.User;
 
-public class ExampleStreamSingleFilter2 {
+public class ExampleStreamCountFilter {
 
 	public static void main(String[] args) {
 
-		User user = Stream
+		boolean exists = Stream
 				.of("Salvador Bru", "John Doe", "Aimee Yao", "Maria Smith", "John Gosling")
 				.map(firstName -> new User(firstName.split(" ")[0], firstName.split(" ")[1]))
 				.peek(System.out::println)
-				.filter(u -> u.getId().equals(2))
-				.findFirst().get();
+				.anyMatch(u -> u.getId().equals(3));
 				
-		System.out.println(user);
+		System.out.println(exists);
 
 	}
 }
