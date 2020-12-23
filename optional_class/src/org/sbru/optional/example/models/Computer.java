@@ -3,6 +3,7 @@ package org.sbru.optional.example.models;
 public class Computer {
 	private String name;
 	private String model;
+	private Processor processor;
 
 	public Computer(String name, String model) {
 		super();
@@ -24,6 +25,14 @@ public class Computer {
 
 	public void setModel(String model) {
 		this.model = model;
+	}
+
+	public Processor getProcessor() {
+		return processor;
+	}
+
+	public void setProcessor(Processor processor) {
+		this.processor = processor;
 	}
 
 	@Override
