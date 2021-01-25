@@ -39,13 +39,14 @@ public class SortArray {
 			}
 		}
 
-		// ORDENANDO CON BUBBLE SORT CON COMPARETO
+		
 		System.out.print("\n\nArray2 sorted with bubble sort: ");
 		for (int i = 0; i < totalLength; i++) {
 			System.out.print(array2[i] + " ");
 		}
 		System.out.print("\nContador = " + c);
 
+		// ORDENANDO CON BUBBLE SORT CON COMPARETO
 		Integer[] array3 = { 5, 2, 4, 1, 3 };
 		int c2 = 0;
 
