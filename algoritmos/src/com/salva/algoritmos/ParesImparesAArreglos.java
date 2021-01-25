@@ -1,8 +1,5 @@
 package com.salva.algoritmos;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class ParesImparesAArreglos {
 
 	public static void main(String[] args) {
