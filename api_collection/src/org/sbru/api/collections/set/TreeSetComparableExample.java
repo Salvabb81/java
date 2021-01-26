@@ -1,5 +1,7 @@
 package org.sbru.api.collections.set;
 
+import static java.util.Comparator.comparing;
+import java.util.Comparator;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -9,7 +11,8 @@ public class TreeSetComparableExample {
 
 	public static void main(String[] args) {
 		
-		Set<Alumno> sa = new TreeSet<>((a, b) -> b.getNombre().compareTo(a.getNombre()));
+//		Set<Alumno> sa = new TreeSet<>((a, b) -> b.getNombre().compareTo(a.getNombre()));
+		Set<Alumno> sa = new TreeSet<>(comparing(Alumno::getNota));
 		sa.add(new Alumno("Salvador", 5));
 		sa.add(new Alumno("Aimee", 6));
 		sa.add(new Alumno("John", 4));
