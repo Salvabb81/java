@@ -37,14 +37,14 @@ public class Alumno implements Comparable<Alumno>{
 
 	@Override
 	public int compareTo(Alumno a) {
-//		if(this.nombre == null) {
-//			return 0;
-//		}
-//		return this.nombre.compareTo(a.nombre);
-		if(this.nota == null) {
+		if(this.nombre == null) {
 			return 0;
 		}
-		return this.nota.compareTo(a.nota);
+		return this.nombre.compareTo(a.nombre);
+//		if(this.nota == null) {
+//			return 0;
+//		}
+//		return this.nota.compareTo(a.nota);
 	}
 
 	@Override
