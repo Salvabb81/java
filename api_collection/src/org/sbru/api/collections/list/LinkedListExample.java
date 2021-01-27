@@ -1,4 +1,4 @@
-package org.sbru.api.collections.set;
+package org.sbru.api.collections.list;
 
 import java.util.LinkedList;
 import java.util.ListIterator;
