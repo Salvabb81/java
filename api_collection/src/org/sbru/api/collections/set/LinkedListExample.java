@@ -1,7 +1,7 @@
 package org.sbru.api.collections.set;
 
 import java.util.LinkedList;
-import java.util.List;
+import java.util.ListIterator;
 
 import org.sbru.api.collections.modelo.Alumno;
 
@@ -46,5 +46,16 @@ public class LinkedListExample {
 
 		linked.set(3, new Alumno("Ryan", 8));
 		System.out.println(linked + ", size = " + linked.size());
+
+		ListIterator<Alumno> li = linked.listIterator();
+
+		System.out.println("===== Next =====");
+		while (li.hasNext()) {
+			System.out.println(li.next());
+		}
+		System.out.println("===== Previous =====");
+		while (li.hasPrevious()) {
+			System.out.println(li.previous());
+		}
 	}
 }
