@@ -8,7 +8,7 @@ import java.util.Set;
 public class HashMapExample {
 
 	public static void main(String[] args) {
-		Map<String, String> person = new HashMap<>();
+		Map<String, Object> person = new HashMap<>();
 		System.out.println("Has elements: " + !person.isEmpty());
 
 		person.put(null, "1234");
@@ -20,11 +20,29 @@ public class HashMapExample {
 		person.put("email", "johndoe@email.com");
 		person.put("age", "30");
 
+		Map<String, String> address = new HashMap<>();
+		address.put("country", "Spain");
+		address.put("province", "Valencia");
+		address.put("city", "Valencia");
+		address.put("street", "calle de la paz");
+		address.put("number", "1");
+
+		person.put("address", address);
+
 		System.out.println("person = " + person);
-		String name = person.get("firstname");
+		String name = (String) person.get("firstname");
 		System.out.println("nombre = " + name);
-		String lastname = person.get("lastname");
+		String lastname = (String) person.get("lastname");
 		System.out.println("apellido = " + lastname);
+
+		Map<String, String> personAddress = (Map<String, String>) person.get("address");
+		String country = personAddress.get("country");
+		String city = personAddress.get("city");
+		String district = personAddress.getOrDefault("district", "Barrio del Carmen");
+
+		System.out.println(name + "'s country is = " + country);
+		System.out.println(name + "'s city is = " + city);
+		System.out.println(name + "'s district is = " + district);
 
 //		String slnValue = person.remove("secondlastname");
 		boolean b = person.remove("secondlastname", "Poe");
@@ -38,8 +56,8 @@ public class HashMapExample {
 		System.out.println("b2 = " + b2);
 
 		System.out.println("=============================");
-		Collection<String> valores = person.values();
-		for (String v : valores) {
+		Collection<Object> valores = person.values();
+		for (Object v : valores) {
 			System.out.println("v: " + v);
 		}
 
@@ -50,13 +68,13 @@ public class HashMapExample {
 		}
 
 		System.out.println("=============================");
-		for (Map.Entry<String, String> pair : person.entrySet()) {
+		for (Map.Entry<String, Object> pair : person.entrySet()) {
 			System.out.println(pair.getKey() + "=>" + pair.getValue());
 		}
 
 		System.out.println("=============================");
 		for (String key : person.keySet()) {
-			String value = person.get(key);
+			Object value = person.get(key);
 			System.out.println(key + "=>" + value);
 		}
 
