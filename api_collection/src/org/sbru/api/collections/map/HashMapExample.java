@@ -75,7 +75,15 @@ public class HashMapExample {
 		System.out.println("=============================");
 		for (String key : person.keySet()) {
 			Object value = person.get(key);
-			System.out.println(key + "=>" + value);
+			if (value instanceof Map) {
+				String nam = (String) person.get("firstname");
+				Map<String, String> addressMap = (Map<String, String>) value;
+				System.out.println(nam + "'s country is: " + addressMap.get("country"));
+				System.out.println(nam + "'s city is: " + addressMap.get("city"));
+				System.out.println(nam + "'s district is: " + addressMap.getOrDefault("district", "Barrio del Carmen"));
+			} else {
+				System.out.println(key + "=>" + value);
+			}
 		}
 
 		System.out.println("=============================");
